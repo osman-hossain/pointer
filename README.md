@@ -151,3 +151,41 @@ int main()
 ```  
 <image src="./images/swapfunction.png" width="500" title="swapfunction"/>  
 
+### pointer with array
+
+```c
+#include<stdio.h>
+int main()
+{
+    int a[]={10,20,30,40,50};
+    int *ptr;
+    ptr=&a[0];
+    printf("ptr 1000+0*4 = %d\n",*(ptr+0));// *1000+0*4
+    printf("ptr 1000+1*4 = %d\n",*(ptr+1));// *1000+1*4
+    printf("ptr 1000+2*4 = %d\n",*(ptr+2));// *1000+2*4
+    printf("ptr 1000+3*4 = %d\n",*(ptr+3));// *1000+3*4
+    printf("ptr 1000+4*4 = %d\n\n",*(ptr+4));// *1000+4*4
+
+    ptr=&a[3];
+
+    printf("ptr 4 = %d\n",*ptr); // 1000+3*4
+    printf("ptr 5 = %d\n\n",*(ptr+1));// 1012+1*4
+
+    ptr=&a[0];
+
+    for(int i=0; i<5; i++)
+    {
+        printf("pointer = %d\n",*ptr);
+        ptr++; 
+        /* 
+        1000+0*4=1000,
+        1000+1*4=1004,
+        1004+1*4=1008,
+        1008+1*4=1012,
+        1012+1*4=1016.
+        */
+    }
+    getch();
+}
+```  
+<image src="./images/pointerarray.png" width="500" title="pointerwitharray"/>  
