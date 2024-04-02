@@ -130,3 +130,24 @@ int main()
 ```  
 <image src="./images/swap.png" width="500" title="swap"/>  
 
+### swaping using pointer & function
+
+```c
+#include<stdio.h>
+void swap(int *a,int *b)
+{
+    int temp;
+    temp=*a;
+    *a=*b;
+    *b=temp;
+}
+int main()
+{
+    int x=5,y=10;
+    printf("before swapping x = %d & y = %d",x,y);
+    swap(&x,&y);
+    printf("after swapping x = %d & y = %d",x,y);
+}
+```  
+<image src="./images/swapfunction.png" width="500" title="swapfunction"/>  
+
