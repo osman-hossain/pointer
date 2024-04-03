@@ -280,3 +280,51 @@ int main()
 ```  
 <image src="./images/charcterstring.png" title="characterstring" />
 
+### modify value not changeing function
+
+- [x] pass by value
+
+```c
+#include<stdio.h>
+void modifyvalue(int a)
+{
+   a=20;
+}
+int main()
+{
+    int num=10;
+    printf("Before Modification : %d\n\n",num);
+
+    modifyvalue(num);
+
+    printf("After Modification : %d",num);
+
+    return 0;
+}
+```
+<image src="./images/modifynotchange.png" width="500" title="Modify-value-not-change"/>
+
+### modify value change using pointer
+
+- [x] pass by reference
+
+```c
+#include<stdio.h>
+void modifyvalue(int *ptr)
+{
+    *ptr=20;
+}
+int main()
+{
+    int a = 10;
+
+    printf("Before Modification : %d\n\n",a);
+
+    modifyvalue(&a);
+
+    printf("After Modification : %d\n",a);
+
+    return 0;
+}
+```  
+<image src=".images/modified.png" width="500" title="Modified"/>
