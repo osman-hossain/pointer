@@ -189,3 +189,94 @@ int main()
 }
 ```  
 <image src="./images/pointerarray.png" width="500" title="pointerwitharray"/>  
+
+### charcter array with pointer
+
+```c
+#include<stdio.h>
+int main()
+{
+    char a[]="abu ubaida";
+    char *ptr;
+
+    ptr=&a[0];
+
+    printf("a[0] = %c\n",*ptr);
+    printf("a[1] = %c\n",*(ptr+1));
+    printf("a[2] = %c\n",*(ptr+2));
+
+    int count=0;
+    int i=0;
+    while(a[i]!='\0')
+    {
+        count++;
+        i++;
+    }
+
+    printf("\n total number of character : %d\n\n",count);
+
+    for(int i=0; i<count; i++)
+    {
+        printf("%c",*ptr);
+        ptr++;
+    }
+    getchar();
+}
+```
+
+<image src="./images/pointercharacterarray.png" title="pointer-character-array" />  
+
+### pointer array character function
+
+```c
+#include<stdio.h>
+void sum(char *a,char*b)
+{
+    int count=0;
+    int i=0;
+    while(a[i]!='\0')
+    {
+        count++;
+        i++;
+    }
+
+    for(int i=0; i<count; i++)
+    {
+        printf("%c",*a);
+        a++;
+    }
+    printf("\t");
+    int count1=strlen(b);
+    for(int j=0; j<count1; j++)
+    {
+        printf("%c",*b);
+        b++;
+    }
+}
+int main()
+{
+    char name1[]="abu ubaida",name2[]="ali hamza";
+
+    sum(&name1,&name2);
+}
+```
+<image src="./images/functionpointer.png" width="500" title="Function with pointer character array " alt=" Function pointer character array is not showing" border="5" hspace="20" vspace="20" align="top"/>  
+
+### string pointer 
+
+```c
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+    char *name[]={"abu ubaida","mvsareng rafah", "abdullah al qarib"};
+
+    printf("100 + 0 + 0 = %s\n",*(name+0)+0);
+    printf("100 +1*4+ 2 = %s\n",*(name+1)+2);
+    printf("100 +2*4+0 = %s\n",*(name+2)+0);
+
+    getchar();
+}
+```  
+<image src="./images/charcterstring.png" title="characterstring" />
+
